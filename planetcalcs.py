@@ -12,7 +12,7 @@ debug = False
 
 
 class Calc():
-    def star_make():
+    def star_make(star_name: str):
         """
         Return a set containing star attributes which you can pass to `hab_score` to get a habitability score.
 
@@ -27,7 +27,7 @@ class Calc():
         min_chz     = temp_kelvin * mass / 10 * 2
         max_chz     = min_chz * 4
 
-        output = {'spectral': spectral, 'temp_kelvin': temp_kelvin, 'mass': mass, 'min-chz': min_chz, 'max-chz': max_chz}
+        output = {'name':star_name,'spectral': spectral, 'temp_kelvin': temp_kelvin, 'mass': mass, 'min-chz': min_chz, 'max-chz': max_chz}
         return(output)
     def hab_score(distanceFromStar: int, star: set):
         

@@ -39,9 +39,9 @@ def stars(starstomake: int):
     
     for i in range(starstomake):
         
-        star = pcal.Calc.star_make()
-        stars.append(star)
         star_name = pcal.Name.star()
+        star = pcal.Calc.star_make(star_name)
+        stars.append(star)
         
         for pl in range(random.randint(4,16)):
             dfs = random.randint(230,450)
