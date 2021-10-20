@@ -28,7 +28,7 @@ M          x1
 ```
 # Command help
 ## legacy-stars (deprecated)
-Old star system & planet generator. No longer unavailable.
+Old star system & planet generator. No longer available.
 
 ## legacy-planets (deprecated)
 Old planet generator. No longer available.
