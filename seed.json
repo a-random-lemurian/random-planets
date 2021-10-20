@@ -194,6 +194,18 @@
   ],
   "stars-genned": 0,
 
+  "names": {
+    "star-surveys": ["2MASS"],
+    "meaningless-1": {
+      "component1": [
+        "Par","Mul","Ekk","Er","Amarat","Onse","Graucha","Kopola","Semul","Itsche"
+      ],
+      "component2": [
+        "ia","idala","iserk","iteria","imsolia","oldali","oprakia","opreseya","oidala","oilia",
+        "etemeia","useia"
+      ]
+    }
+  },
   "config.OUTPUT_FORMAT": "json",
   "config.STAR_NAMES": "LACOP",
   "config.PLANET_NAMES": "numeric"
