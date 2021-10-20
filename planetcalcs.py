@@ -101,6 +101,19 @@ class Calc():
         res_modifier = SEED['planet-type-modifiers'][planetType]['resource']
         res = hab_score * res_modifier / random.uniform(1.6000, 4.0000)
         return(res)
+    
+    def atmo_tier(atmo_score: int
+        if atmo_score > 1200:
+            return('Perfect')
+        elif atmo_score > 700:
+            return('Breathable')
+        elif atmo_score > 450:
+            return('Unbreathable')
+        elif atmo_score > 100:
+            return('Deadly')
+        else:
+            return('Extremely deadly')
+
 
 
 class Name():
