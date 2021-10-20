@@ -1,3 +1,7 @@
+# Copyright (c) 2021, Lemuria
+# This code is licensed under the GNU GPL v3
+
+
 from typing import Optional
 import typer
 import json

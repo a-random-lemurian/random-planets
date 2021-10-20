@@ -1,3 +1,6 @@
+# Copyright (c) 2021, Lemuria
+# This code is licensed under the GNU GPL v3
+
 from math import ceil
 import random
 import json
