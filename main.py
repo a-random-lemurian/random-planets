@@ -72,11 +72,5 @@ def stars(starstomake: int):
         
     print('DONE')
 
-# Manual
-@app.command()
-def man():
-    manual = open('man.txt','r')
-    print(manual.read())
-
 if __name__ == "__main__":
     app()
