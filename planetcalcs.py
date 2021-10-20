@@ -108,7 +108,7 @@ class Calc():
         elif atmo_score > 700:
             return('Breathable')
         elif atmo_score > 450:
-            return('Unbreathable')
+            return('Slightly unbreathable')
         elif atmo_score > 100:
             return('Deadly')
         else:
