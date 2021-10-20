@@ -31,6 +31,7 @@ elif FILE_FORMAT == 'csv':
 else:
     raise Exception(f'File format {FILE_FORMAT} not supported, please use json/csv.')
 
+import csv
 
 # All the good stuff.
 
