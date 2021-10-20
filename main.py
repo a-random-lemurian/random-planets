@@ -46,8 +46,8 @@ def stars(starstomake: int):
         star = pcal.Calc.star_make(star_name)
         stars.append(star)
         
+        dfs = random.randint(230,450)
         for pl in range(random.randint(4,16)):
-            dfs = random.randint(230,450)
             habScore    = pcal.Calc.hab_score(distanceFromStar=dfs,star=star)
             planet_type = pcal.Calc.choosePlanet(int(habScore))
             planet_name = f'{star_name}.p{pl}'
