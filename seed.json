@@ -16,16 +16,19 @@
       "Tundra"
     ],
     "t3":[
-      "Desert"
+      "Desert",
+      "Swamp"
     ],
     "t4":[
       "Earthlike",
       "Shallow Ocean",
-      "Deep Ocean"
+      "Deep Ocean",
+      "Plains",
     ],
     "t5":[
       "Paradise",
-      "Gaian"
+      "Gaian",
+      "Forest"
     ]
   },
 	"planet-surveys": [""],
