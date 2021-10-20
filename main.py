@@ -33,29 +33,40 @@ import csv
 
 @app.command()
 def stars(starstomake: int):
+    
     stars   = []
     planets = []
+    
     for i in range(starstomake):
+        
         star = pcal.Calc.star_make()
         stars.append(star)
         star_name = pcal.Name.star()
+        
         for pl in range(random.randint(4,16)):
             dfs = random.randint(230,450)
             habScore    = pcal.Calc.hab_score(distanceFromStar=dfs,star=star)
             planet_type = pcal.Calc.choosePlanet(int(habScore))
             planet_name = f'{star_name}.p{pl}'
+            
             dfs += random.randint(65,150)
+            
             planet = {'habScore':habScore, 'planetType':planet_type, 'name':planet_name, 'star':star_name}
             planets.append(planet)
+            
     print('Stars generated. Now writing star data to disk.')
+    
     dirname = f'query-{uuid.uuid4()}'
+    
     os.mkdir(f'star-queries/{dirname}')
     with open(f'star-queries/{dirname}/stars.json','x') as f_stars:
         json.dump(stars, f_stars)
         print('Star data written to disk.')
+        
     with open(f'star-queries/{dirname}/planets.json','x') as f_planets:
         json.dump(planets, f_planets)
         print('Planet data written to disk.')
+        
     print('DONE')
     
 
