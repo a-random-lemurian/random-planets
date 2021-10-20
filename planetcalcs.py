@@ -6,7 +6,7 @@ import random
 import json
 import string
 
-HAB_MODIFIERS = json.load(open('seed.json', 'r'))
+SEED = json.load(open('seed.json', 'r'))
 
 debug = False
 
@@ -21,9 +21,9 @@ class Calc():
         `mass`: Star's mass in solar masses (a star with mass 2SM has twice as much mass than the Sun)
         """
 
-        spectral    = random.choice (HAB_MODIFIERS['star-types'])
-        temp_kelvin = random.uniform(HAB_MODIFIERS['star-type-limits'][spectral]['min-temp'],HAB_MODIFIERS['star-type-limits'][spectral]['max-temp'])
-        mass        = random.uniform(HAB_MODIFIERS['star-type-limits'][spectral]['min-mass'],HAB_MODIFIERS['star-type-limits'][spectral]['max-mass'])
+        spectral    = random.choice (SEED['star-types'])
+        temp_kelvin = random.uniform(SEED['star-type-limits'][spectral]['min-temp'],SEED['star-type-limits'][spectral]['max-temp'])
+        mass        = random.uniform(SEED['star-type-limits'][spectral]['min-mass'],SEED['star-type-limits'][spectral]['max-mass'])
         min_chz     = temp_kelvin * mass / 10 * 2
         max_chz     = min_chz * 4
 
@@ -39,7 +39,7 @@ class Calc():
         """
         # Get initial variables to base the calculations off on.
         starType = star['spectral']
-        modifier = HAB_MODIFIERS['star-type-hab-modifiers'][(starType)]
+        modifier = SEED['star-type-hab-modifiers'][(starType)]
 
         min_chz = star['min-chz']
         max_chz = star['max-chz']
@@ -89,10 +89,14 @@ class Calc():
         else:
             tier = 't1'
 
-        Planet_Type_chosen = random.choice(HAB_MODIFIERS['planet-types-2'][tier])
+        Planet_Type_chosen = random.choice(SEED['planet-types-2'][tier])
 
         return(Planet_Type_chosen)
-    
+    def atmo_score(hab_score: int, planetType: str):
+        atmo_modifier = SEED['planet-type-modifiers'][planetType]['atmo']
+        atmo = hab_score * atmo_modifier / random.uniform(1.6000,4.0000)
+        return(atmo)
+
 class Name():
     def star():
         region =     ''.join(random.choices(string.digits, k=3))

@@ -53,8 +53,9 @@ def stars(starstomake: int):
             planet_name = f'{star_name}.p{pl}'
             
             dfs += random.randint(65,150)*(random.uniform(0.00000000,1.40000000))
+            atmoScore = pcal.Calc.atmo_score(hab_score=habScore,planetType=planet_type)
             
-            planet = {'habScore':habScore, 'planetType':planet_type, 'name':planet_name, 'star':star_name}
+            planet = {'habScore':habScore, 'atmoScore':atmoScore, 'planetType':planet_type, 'name':planet_name, 'star':star_name}
             planets.append(planet)
             
     print('Stars generated. Now writing star data to disk.')
