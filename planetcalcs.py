@@ -94,11 +94,11 @@ class Calc():
         return(Planet_Type_chosen)
 class Name():
     def star():
-        region = ''.join(random.choices(string.digits, k=3))
+        region =     ''.join(random.choices(string.digits, k=3))
         quadrant_x = ''.join(random.choices(string.digits, k=2))
         quadrant_y = ''.join(random.choices(string.digits, k=2))
         quadrant_z = ''.join(random.choices(string.digits, k=2))
-        star_num = ''.join(random.choices(string.digits, k=5))
+        star_num =   ''.join(random.choices(string.digits, k=5))
         return(f'LACOS1.r{region}.qx{quadrant_x}-y{quadrant_y}-z{quadrant_z}.s{star_num}')
 
 # for xp in range(250):
