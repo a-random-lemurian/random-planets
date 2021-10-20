@@ -15,7 +15,6 @@ import uuid
 app = typer.Typer()
 
 CONFIG = json.load(open('seed.json'))
-stars_json = json.load(open('stars.json', 'r+'))
 
 PLANET_TYPES = CONFIG['planet-types']
 GOVERNMENTS  = CONFIG['governments']
