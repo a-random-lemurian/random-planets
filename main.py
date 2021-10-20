@@ -56,8 +56,8 @@ def stars(starstomake: int):
             atmoScore = pcal.Calc.atmo_score(hab_score=habScore,planetType=planet_type)
             resScore  = pcal.Calc.res_score(hab_score=habScore,planetType=planet_type)
 
-            
-            
+            atmoTier = pcal.Calc.atmo_tier(habScore)
+            resTier  = pcal.Calc.res_tier(habScore)
             planet = {
                 'name':planet_name,
                 'star':star_name,
@@ -65,6 +65,8 @@ def stars(starstomake: int):
                 'habScore':habScore,
                 'atmoScore':atmoScore,
                 'resScore':resScore,
+                'atmoTier':atmoTier,
+                'resTier':resTier
                     }
             planets.append(planet)
             
