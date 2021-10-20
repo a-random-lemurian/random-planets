@@ -22,7 +22,6 @@ GOVERNMENTS  = CONFIG['governments']
 
 PLANET_SURVEYS = CONFIG['planet-surveys']
 STAR_SURVEYS   = CONFIG['star-surveys']
-import csv
 
 if FILE_FORMAT == 'json':
     do_nothing = 0
