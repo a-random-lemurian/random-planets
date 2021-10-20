@@ -23,10 +23,12 @@ PLANET_SURVEYS = CONFIG['planet-surveys']
 STAR_SURVEYS   = CONFIG['star-surveys']
 import csv
 
-
-
-
-
+if FILE_FORMAT == 'json':
+    do_nothing = 0
+elif FILE_FORMAT == 'csv':
+    do_nothing = 0
+else:
+    raise Exception(f'File format {FILE_FORMAT} not supported, please use json/csv.')
 
 
 # All the good stuff.
