@@ -26,3 +26,16 @@ G          x3
 K          x2
 M          x1
 ```
+# Command help
+## legacy-stars (deprecated)
+Old star system & planet generator. No longer unavailable.
+
+## legacy-planets (deprecated)
+Old planet generator. No longer available.
+
+## stars
+Generate stars. Depending on the setting of `config.OUTPUT_FORMAT`, it will either output 2 JSON or CSV files named `planets` and `stars`.
+
+
+## man (do not use)
+`man` is a leftover relic of an older private version and will be removed soon.
