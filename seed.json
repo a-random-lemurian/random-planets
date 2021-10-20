@@ -170,5 +170,6 @@
 	"governments": [
     "Terran Republic"
   ],
-  "stars-genned": 0
+  "stars-genned": 0,
+  "config.OUTPUT_FORMAT": "json"
 }
