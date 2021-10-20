@@ -97,6 +97,12 @@ class Calc():
         atmo = hab_score * atmo_modifier / random.uniform(1.6000,4.0000)
         return(atmo)
 
+    def res_score(hab_score: int, planetType: str):
+        res_modifier = SEED['planet-type-modifiers'][planetType]['resources']
+        res = hab_score * res_modifier / random.uniform(1.6000, 4.0000)
+        return(res)
+
+
 class Name():
     def star():
         region =     ''.join(random.choices(string.digits, k=3))
