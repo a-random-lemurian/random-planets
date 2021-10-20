@@ -1,208 +1,668 @@
 {
   "planet-types": [
-    "Barren","Toxic","Lava","Ice","Tundra","Desert","Earthlike","Ocean","Paradise","Gaian","Aresian","Mega-Earth","Mostland"
+    "Barren",
+    "Toxic",
+    "Lava",
+    "Ice",
+    "Tundra",
+    "Desert",
+    "Earthlike",
+    "Ocean",
+    "Paradise",
+    "Gaian",
+    "Aresian",
+    "Mega-Earth",
+    "Mostland"
   ],
-	"planet-types-2": {
-    "t1":[
-      "Barren",
-      "Toxic",
-      "Lava",
-      "Corrosive",
-      "Acidic",
-      "Venusian"
-    ],
-    "t2":[
-      "Ice",
-      "Tundra"
-    ],
-    "t3":[
-      "Desert",
-      "Swamp"
-    ],
-    "t4":[
-      "Earthlike",
-      "Shallow Ocean",
-      "Deep Ocean",
-      "Plains"
-    ],
-    "t5":[
-      "Paradise",
-      "Gaian",
-      "Forest"
-    ]
+  "planet-types-2": {
+    "t1": ["Barren", "Toxic", "Lava", "Corrosive", "Acidic", "Venusian"],
+    "t2": ["Ice", "Tundra"],
+    "t3": ["Desert", "Swamp"],
+    "t4": ["Earthlike", "Shallow Ocean", "Deep Ocean", "Plains"],
+    "t5": ["Paradise", "Gaian", "Forest"]
   },
-	"planet-surveys": [""],
-  "star-surveys": ["2MASS","STARGEN","SUS"],
-	"star-types": [
-		"O-0","O-1","O-2","O-3","O-4","O-5","O-6","O-7","O-8","O-9",
-		"B-0","B-1","B-2","B-3",      "B-5","B-6","B-7","B-8","B-9",
-		"A-0","A-1","A-2","A-3","A-4","A-5","A-6","A-7","A-8","A-9",
-		            "F-2"      ,"F-4","F-5","F-6"      ,"F-8","F-9",
-		"G-0","G-1","G-2","G-3","G-4","G-5","G-6","G-7","G-8","G-9",
-		"K-0","K-1","K-2","K-3","K-4","K-5","K-6","K-7","K-8","K-9",
-		"M-0","M-1","M-2","M-3","M-4","M-5","M-6","M-7","M-8","M-9"
-	],
+  "planet-type-modifiers": {
+    "Barren": {
+      "atmo": -1,
+      "resource": 0.34
+    },
+    "Toxic": {
+      "atmo": -2,
+      "resource": 0.12
+    },
+    "Lava": {
+      "atmo": -1.3,
+      "resource": 0.45
+    },
+    "Corrosive": {
+      "atmo": -2.4,
+      "resource": 0.11
+    },
+    "Acidic": {
+      "atmo": -2.1,
+      "resource": 0.14
+    },
+    "Venusian": {
+      "atmo": -1.8,
+      "resource": 0.57
+    },
+    "Ice": {
+      "atmo": 0.78,
+      "resource": 0.74
+    },
+    "Tundra": {
+      "atmo": 0.88,
+      "resource": 0.55
+    },
+    "Desert": {
+      "atmo": 0.94,
+      "resource": 0.77
+    },
+    "Swamp": {
+      "atmo": 1.11,
+      "resource": 1.33
+    },
+    "Earthlike": {
+      "atmo": 1.74,
+      "resource": 1.64
+    },
+    "Shallow Ocean": {
+      "atmo": 1.55,
+      "resource": 0.44
+    },
+    "Deep Ocean": {
+      "atmo": 1.33,
+      "resource": 0.23
+    },
+    "Plains": {
+      "atmo": 1.53,
+      "resource": 1.21
+    },
+    "Paradise": {
+      "atmo": 2.88,
+      "resource": 1.96
+    },
+    "Gaian": {
+      "atmo": 3.53,
+      "resource": 2.44
+    },
+    "Forest": {
+      "atmo": 1.44,
+      "resource": 1.34
+    }
+  },
+  "planet-surveys": [""],
+  "star-surveys": ["2MASS", "STARGEN", "SUS"],
+  "star-types": [
+    "O-0",
+    "O-1",
+    "O-2",
+    "O-3",
+    "O-4",
+    "O-5",
+    "O-6",
+    "O-7",
+    "O-8",
+    "O-9",
+    "B-0",
+    "B-1",
+    "B-2",
+    "B-3",
+    "B-5",
+    "B-6",
+    "B-7",
+    "B-8",
+    "B-9",
+    "A-0",
+    "A-1",
+    "A-2",
+    "A-3",
+    "A-4",
+    "A-5",
+    "A-6",
+    "A-7",
+    "A-8",
+    "A-9",
+    "F-2",
+    "F-4",
+    "F-5",
+    "F-6",
+    "F-8",
+    "F-9",
+    "G-0",
+    "G-1",
+    "G-2",
+    "G-3",
+    "G-4",
+    "G-5",
+    "G-6",
+    "G-7",
+    "G-8",
+    "G-9",
+    "K-0",
+    "K-1",
+    "K-2",
+    "K-3",
+    "K-4",
+    "K-5",
+    "K-6",
+    "K-7",
+    "K-8",
+    "K-9",
+    "M-0",
+    "M-1",
+    "M-2",
+    "M-3",
+    "M-4",
+    "M-5",
+    "M-6",
+    "M-7",
+    "M-8",
+    "M-9"
+  ],
   "star-type-limits": {
-    "ignore__:note:":"temperatures are in kelvin",
-    "O-0": {"min-mass": 70,"max-mass": 190,"min-temp": 27000,"max-temp": 70000},
-    "O-1": {"min-mass": 70,"max-mass": 190,"min-temp": 27000,"max-temp": 70000},
-    "O-2": {"min-mass": 85,"max-mass": 165,"min-temp": 34000,"max-temp": 67000},
-    "O-3":{"min-mass":85,"max-mass":140,"min-temp":29000,"max-temp":66000},
-    "O-4":{"min-mass":70,"max-mass":115,"min-temp":31000,"max-temp":72000},
-    "O-5":{"min-mass":85,"max-mass":120,"min-temp":37000,"max-temp":59000},
-    "O-6":{"min-mass":70,"max-mass":125,"min-temp":41000,"max-temp":88000},
-    "O-7":{"min-mass":85,"max-mass":140,"min-temp":45000,"max-temp":102000},
-    "O-8":{"min-mass":60,"max-mass":140,"min-temp":57000,"max-temp":97000},
-    "O-9":{"min-mass":55,"max-mass":125,"min-temp":54000,"max-temp":115000},
-    "B-0":{"min-mass":9,"max-mass":15,"min-temp":25000,"max-temp":40},
-    "B-1":{"min-mass":8,"max-mass":14,"min-temp":23000,"max-temp":32000},
-    "B-2":{"min-mass":8,"max-mass":13,"min-temp":24000,"max-temp":31000},
-    "B-3":{"min-mass":6,"max-mass":10,"min-temp":16000,"max-temp":21000},
-    "B-5":{"min-mass":4,"max-mass":7,"min-temp":13000,"max-temp":17000},
-    "B-6":{"min-mass":4,"max-mass":8,"min-temp":11000,"max-temp":14000},
-    "B-7":{"min-mass":3,"max-mass":6,"min-temp":12000,"max-temp":15000},
-    "B-8":{"min-mass":2,"max-mass":5,"min-temp":10000,"max-temp":12000},
-    "B-9":{"min-mass":2,"max-mass":4,"min-temp":9000,"max-temp":11000},
-    "A-0":{"min-mass":2.40,"max-mass":4.5,"min-temp":10000,"max-temp":12000},
-    "A-1":{"min-mass":2.30,"max-mass":4.2,"min-temp":9000 ,"max-temp":11000},
-    "A-2":{"min-mass":2.19,"max-mass":3.5,"min-temp":9000 ,"max-temp":11000},
-    "A-3":{"min-mass":2.11,"max-mass":3.7,"min-temp":9000 ,"max-temp":11000},
-    "A-4":{"min-mass":2.03,"max-mass":4.5,"min-temp":8000 ,"max-temp":11000},
-    "A-5":{"min-mass":1.86,"max-mass":3.1,"min-temp":8000 ,"max-temp":13000},
-    "A-6":{"min-mass":1.8 ,"max-mass":2.4,"min-temp":8000 ,"max-temp":13000},
-    "A-7":{"min-mass":1.74,"max-mass":3.9,"min-temp":7000 ,"max-temp":13000},
-    "A-8":{"min-mass":1.66,"max-mass":4.5,"min-temp":7000 ,"max-temp":9000},
-    "A-9":{"min-mass":1.62,"max-mass":4.3,"min-temp":7000 ,"max-temp":9000},
-    "F-0":{"min-mass":1.40,"max-mass":1.77,"min-temp":7610,"max-temp":9000},
-    "F-2":{"min-mass":1.31,"max-mass":1.39,"min-temp":7040,"max-temp":7609},
-    "F-4":{"min-mass":1.23,"max-mass":1.30,"min-temp":6690,"max-temp":7039},
-    "F-5":{"min-mass":1.20,"max-mass":1.22,"min-temp":6545,"max-temp":6689},
-    "F-6":{"min-mass":1.16,"max-mass":1.19,"min-temp":6400,"max-temp":6544},
-    "F-8":{"min-mass":1.09,"max-mass":1.15,"min-temp":6150,"max-temp":6399},
-    "F-9":{"min-mass":1.07,"max-mass":1.08,"min-temp":6050,"max-temp":6149},
-    "G-0":{ "min-mass":1.06 ,"max-mass":1.33,"min-temp":5930,"max-temp":6130 },
-    "G-1":{ "min-mass":1.03 ,"max-mass":1.11,"min-temp":5860,"max-temp":5929 },
-    "G-2":{ "min-mass":1.00 ,"max-mass":1.02,"min-temp":5770,"max-temp":5859 },
-    "G-3":{ "min-mass":0.99 ,"max-mass":1.12,"min-temp":5720,"max-temp":5769 },
-    "G-4":{ "min-mass":0.985,"max-mass":1.04,"min-temp":5680,"max-temp":5719 }, 
-    "G-5":{ "min-mass":0.98 ,"max-mass":1.23,"min-temp":5660,"max-temp":5679 },
-    "G-6":{ "min-mass":0.97 ,"max-mass":1.10,"min-temp":5600,"max-temp":5659 },
-    "G-7":{ "min-mass":0.95 ,"max-mass":1.03,"min-temp":5550,"max-temp":5599 },
-    "G-8":{ "min-mass":0.94 ,"max-mass":1.06,"min-temp":5480,"max-temp":5549 },
-    "G-9":{ "min-mass":0.9  ,"max-mass":1.23,"min-temp":5380,"max-temp":5479 },
-    "K-0":{"min-mass":0.88,"max-mass":0.99,"min-temp":5270,"max-temp":6700},
-    "K-1":{"min-mass":0.86,"max-mass":0.87,"min-temp":5170,"max-temp":5269},
-    "K-2":{"min-mass":0.82,"max-mass":0.85,"min-temp":5100,"max-temp":5169},
-    "K-3":{"min-mass":0.78,"max-mass":0.81,"min-temp":4830,"max-temp":5099},
-    "K-4":{"min-mass":0.73,"max-mass":0.77,"min-temp":4600,"max-temp":4829},
-    "K-5":{"min-mass":0.70,"max-mass":0.72,"min-temp":4440,"max-temp":4599},
-    "K-6":{"min-mass":0.69,"max-mass":0.69,"min-temp":4300,"max-temp":4439},
-    "K-7":{"min-mass":0.64,"max-mass":0.68,"min-temp":4100,"max-temp":4299},
-    "K-8":{"min-mass":0.62,"max-mass":0.63,"min-temp":3990,"max-temp":4099},
-    "K-9":{"min-mass":0.59,"max-mass":0.61,"min-temp":3930,"max-temp":3989},
-    "M-0":{"min-mass":0.57 ,"max-mass":1.21,"min-temp":3850,"max-temp":5120},
-    "M-1":{"min-mass":0.5  ,"max-mass":1.35,"min-temp":3660,"max-temp":4250},
-    "M-2":{"min-mass":0.44 ,"max-mass":1.12,"min-temp":3560,"max-temp":4130},
-    "M-3":{"min-mass":0.37 ,"max-mass":0.76,"min-temp":3430,"max-temp":4150},
-    "M-4":{"min-mass":0.23 ,"max-mass":0.54,"min-temp":3210,"max-temp":3720},
-    "M-5":{"min-mass":0.16 ,"max-mass":0.77,"min-temp":3060,"max-temp":3500},
-    "M-6":{"min-mass":0.10 ,"max-mass":0.55,"min-temp":2810,"max-temp":3640},
-    "M-7":{"min-mass":0.09 ,"max-mass":1.14,"min-temp":2680,"max-temp":3240},
-    "M-8":{"min-mass":0.085,"max-mass":1.21,"min-temp":2570,"max-temp":4640},
-    "M-9":{"min-mass":0.08 ,"max-mass":1.33,"min-temp":2380,"max-temp":4400}
+    "ignore__:note:": "temperatures are in kelvin",
+    "O-0": {
+      "min-mass": 70,
+      "max-mass": 190,
+      "min-temp": 27000,
+      "max-temp": 70000
+    },
+    "O-1": {
+      "min-mass": 70,
+      "max-mass": 190,
+      "min-temp": 27000,
+      "max-temp": 70000
+    },
+    "O-2": {
+      "min-mass": 85,
+      "max-mass": 165,
+      "min-temp": 34000,
+      "max-temp": 67000
+    },
+    "O-3": {
+      "min-mass": 85,
+      "max-mass": 140,
+      "min-temp": 29000,
+      "max-temp": 66000
+    },
+    "O-4": {
+      "min-mass": 70,
+      "max-mass": 115,
+      "min-temp": 31000,
+      "max-temp": 72000
+    },
+    "O-5": {
+      "min-mass": 85,
+      "max-mass": 120,
+      "min-temp": 37000,
+      "max-temp": 59000
+    },
+    "O-6": {
+      "min-mass": 70,
+      "max-mass": 125,
+      "min-temp": 41000,
+      "max-temp": 88000
+    },
+    "O-7": {
+      "min-mass": 85,
+      "max-mass": 140,
+      "min-temp": 45000,
+      "max-temp": 102000
+    },
+    "O-8": {
+      "min-mass": 60,
+      "max-mass": 140,
+      "min-temp": 57000,
+      "max-temp": 97000
+    },
+    "O-9": {
+      "min-mass": 55,
+      "max-mass": 125,
+      "min-temp": 54000,
+      "max-temp": 115000
+    },
+    "B-0": { "min-mass": 9, "max-mass": 15, "min-temp": 25000, "max-temp": 40 },
+    "B-1": {
+      "min-mass": 8,
+      "max-mass": 14,
+      "min-temp": 23000,
+      "max-temp": 32000
+    },
+    "B-2": {
+      "min-mass": 8,
+      "max-mass": 13,
+      "min-temp": 24000,
+      "max-temp": 31000
+    },
+    "B-3": {
+      "min-mass": 6,
+      "max-mass": 10,
+      "min-temp": 16000,
+      "max-temp": 21000
+    },
+    "B-5": {
+      "min-mass": 4,
+      "max-mass": 7,
+      "min-temp": 13000,
+      "max-temp": 17000
+    },
+    "B-6": {
+      "min-mass": 4,
+      "max-mass": 8,
+      "min-temp": 11000,
+      "max-temp": 14000
+    },
+    "B-7": {
+      "min-mass": 3,
+      "max-mass": 6,
+      "min-temp": 12000,
+      "max-temp": 15000
+    },
+    "B-8": {
+      "min-mass": 2,
+      "max-mass": 5,
+      "min-temp": 10000,
+      "max-temp": 12000
+    },
+    "B-9": {
+      "min-mass": 2,
+      "max-mass": 4,
+      "min-temp": 9000,
+      "max-temp": 11000
+    },
+    "A-0": {
+      "min-mass": 2.4,
+      "max-mass": 4.5,
+      "min-temp": 10000,
+      "max-temp": 12000
+    },
+    "A-1": {
+      "min-mass": 2.3,
+      "max-mass": 4.2,
+      "min-temp": 9000,
+      "max-temp": 11000
+    },
+    "A-2": {
+      "min-mass": 2.19,
+      "max-mass": 3.5,
+      "min-temp": 9000,
+      "max-temp": 11000
+    },
+    "A-3": {
+      "min-mass": 2.11,
+      "max-mass": 3.7,
+      "min-temp": 9000,
+      "max-temp": 11000
+    },
+    "A-4": {
+      "min-mass": 2.03,
+      "max-mass": 4.5,
+      "min-temp": 8000,
+      "max-temp": 11000
+    },
+    "A-5": {
+      "min-mass": 1.86,
+      "max-mass": 3.1,
+      "min-temp": 8000,
+      "max-temp": 13000
+    },
+    "A-6": {
+      "min-mass": 1.8,
+      "max-mass": 2.4,
+      "min-temp": 8000,
+      "max-temp": 13000
+    },
+    "A-7": {
+      "min-mass": 1.74,
+      "max-mass": 3.9,
+      "min-temp": 7000,
+      "max-temp": 13000
+    },
+    "A-8": {
+      "min-mass": 1.66,
+      "max-mass": 4.5,
+      "min-temp": 7000,
+      "max-temp": 9000
+    },
+    "A-9": {
+      "min-mass": 1.62,
+      "max-mass": 4.3,
+      "min-temp": 7000,
+      "max-temp": 9000
+    },
+    "F-0": {
+      "min-mass": 1.4,
+      "max-mass": 1.77,
+      "min-temp": 7610,
+      "max-temp": 9000
+    },
+    "F-2": {
+      "min-mass": 1.31,
+      "max-mass": 1.39,
+      "min-temp": 7040,
+      "max-temp": 7609
+    },
+    "F-4": {
+      "min-mass": 1.23,
+      "max-mass": 1.3,
+      "min-temp": 6690,
+      "max-temp": 7039
+    },
+    "F-5": {
+      "min-mass": 1.2,
+      "max-mass": 1.22,
+      "min-temp": 6545,
+      "max-temp": 6689
+    },
+    "F-6": {
+      "min-mass": 1.16,
+      "max-mass": 1.19,
+      "min-temp": 6400,
+      "max-temp": 6544
+    },
+    "F-8": {
+      "min-mass": 1.09,
+      "max-mass": 1.15,
+      "min-temp": 6150,
+      "max-temp": 6399
+    },
+    "F-9": {
+      "min-mass": 1.07,
+      "max-mass": 1.08,
+      "min-temp": 6050,
+      "max-temp": 6149
+    },
+    "G-0": {
+      "min-mass": 1.06,
+      "max-mass": 1.33,
+      "min-temp": 5930,
+      "max-temp": 6130
+    },
+    "G-1": {
+      "min-mass": 1.03,
+      "max-mass": 1.11,
+      "min-temp": 5860,
+      "max-temp": 5929
+    },
+    "G-2": {
+      "min-mass": 1.0,
+      "max-mass": 1.02,
+      "min-temp": 5770,
+      "max-temp": 5859
+    },
+    "G-3": {
+      "min-mass": 0.99,
+      "max-mass": 1.12,
+      "min-temp": 5720,
+      "max-temp": 5769
+    },
+    "G-4": {
+      "min-mass": 0.985,
+      "max-mass": 1.04,
+      "min-temp": 5680,
+      "max-temp": 5719
+    },
+    "G-5": {
+      "min-mass": 0.98,
+      "max-mass": 1.23,
+      "min-temp": 5660,
+      "max-temp": 5679
+    },
+    "G-6": {
+      "min-mass": 0.97,
+      "max-mass": 1.1,
+      "min-temp": 5600,
+      "max-temp": 5659
+    },
+    "G-7": {
+      "min-mass": 0.95,
+      "max-mass": 1.03,
+      "min-temp": 5550,
+      "max-temp": 5599
+    },
+    "G-8": {
+      "min-mass": 0.94,
+      "max-mass": 1.06,
+      "min-temp": 5480,
+      "max-temp": 5549
+    },
+    "G-9": {
+      "min-mass": 0.9,
+      "max-mass": 1.23,
+      "min-temp": 5380,
+      "max-temp": 5479
+    },
+    "K-0": {
+      "min-mass": 0.88,
+      "max-mass": 0.99,
+      "min-temp": 5270,
+      "max-temp": 6700
+    },
+    "K-1": {
+      "min-mass": 0.86,
+      "max-mass": 0.87,
+      "min-temp": 5170,
+      "max-temp": 5269
+    },
+    "K-2": {
+      "min-mass": 0.82,
+      "max-mass": 0.85,
+      "min-temp": 5100,
+      "max-temp": 5169
+    },
+    "K-3": {
+      "min-mass": 0.78,
+      "max-mass": 0.81,
+      "min-temp": 4830,
+      "max-temp": 5099
+    },
+    "K-4": {
+      "min-mass": 0.73,
+      "max-mass": 0.77,
+      "min-temp": 4600,
+      "max-temp": 4829
+    },
+    "K-5": {
+      "min-mass": 0.7,
+      "max-mass": 0.72,
+      "min-temp": 4440,
+      "max-temp": 4599
+    },
+    "K-6": {
+      "min-mass": 0.69,
+      "max-mass": 0.69,
+      "min-temp": 4300,
+      "max-temp": 4439
+    },
+    "K-7": {
+      "min-mass": 0.64,
+      "max-mass": 0.68,
+      "min-temp": 4100,
+      "max-temp": 4299
+    },
+    "K-8": {
+      "min-mass": 0.62,
+      "max-mass": 0.63,
+      "min-temp": 3990,
+      "max-temp": 4099
+    },
+    "K-9": {
+      "min-mass": 0.59,
+      "max-mass": 0.61,
+      "min-temp": 3930,
+      "max-temp": 3989
+    },
+    "M-0": {
+      "min-mass": 0.57,
+      "max-mass": 1.21,
+      "min-temp": 3850,
+      "max-temp": 5120
+    },
+    "M-1": {
+      "min-mass": 0.5,
+      "max-mass": 1.35,
+      "min-temp": 3660,
+      "max-temp": 4250
+    },
+    "M-2": {
+      "min-mass": 0.44,
+      "max-mass": 1.12,
+      "min-temp": 3560,
+      "max-temp": 4130
+    },
+    "M-3": {
+      "min-mass": 0.37,
+      "max-mass": 0.76,
+      "min-temp": 3430,
+      "max-temp": 4150
+    },
+    "M-4": {
+      "min-mass": 0.23,
+      "max-mass": 0.54,
+      "min-temp": 3210,
+      "max-temp": 3720
+    },
+    "M-5": {
+      "min-mass": 0.16,
+      "max-mass": 0.77,
+      "min-temp": 3060,
+      "max-temp": 3500
+    },
+    "M-6": {
+      "min-mass": 0.1,
+      "max-mass": 0.55,
+      "min-temp": 2810,
+      "max-temp": 3640
+    },
+    "M-7": {
+      "min-mass": 0.09,
+      "max-mass": 1.14,
+      "min-temp": 2680,
+      "max-temp": 3240
+    },
+    "M-8": {
+      "min-mass": 0.085,
+      "max-mass": 1.21,
+      "min-temp": 2570,
+      "max-temp": 4640
+    },
+    "M-9": {
+      "min-mass": 0.08,
+      "max-mass": 1.33,
+      "min-temp": 2380,
+      "max-temp": 4400
+    }
   },
-  "star-type-hab-modifiers":{
-    "O-0":-4.321,
-    "O-1":-4.770,
-    "O-2":-4.832,
-    "O-3":-4.751,
-    "O-4":-4.749,
-    "O-5":-4.733,
-    "O-6":-4.745,
-    "O-7":-4.742,
-    "O-8":-4.744,
-    "O-9":-4.747,
+  "star-type-hab-modifiers": {
+    "O-0": -4.321,
+    "O-1": -4.77,
+    "O-2": -4.832,
+    "O-3": -4.751,
+    "O-4": -4.749,
+    "O-5": -4.733,
+    "O-6": -4.745,
+    "O-7": -4.742,
+    "O-8": -4.744,
+    "O-9": -4.747,
 
-		"B-0":-3.312,
-    "B-1":-3.334,
-    "B-2":-3.320,
-    "B-3":-3.321,
-    "B-4":-3.337,
-    "B-5":-3.400,
-    "B-6":-3.406,
-    "B-7":-3.386,
-    "B-8":-3.374,
-    "B-9":-3.378,
+    "B-0": -3.312,
+    "B-1": -3.334,
+    "B-2": -3.32,
+    "B-3": -3.321,
+    "B-4": -3.337,
+    "B-5": -3.4,
+    "B-6": -3.406,
+    "B-7": -3.386,
+    "B-8": -3.374,
+    "B-9": -3.378,
 
-		"A-0":-2.211,
-    "A-1":-2.335,
-    "A-2":-2.443,
-    "A-3":-2.559,
-    "A-4":-2.588,
-    "A-5":-2.602,
-    "A-6":-2.621,
-    "A-7":-2.634,
-    "A-8":-2.678,
-    "A-9":-2.704,
+    "A-0": -2.211,
+    "A-1": -2.335,
+    "A-2": -2.443,
+    "A-3": -2.559,
+    "A-4": -2.588,
+    "A-5": -2.602,
+    "A-6": -2.621,
+    "A-7": -2.634,
+    "A-8": -2.678,
+    "A-9": -2.704,
 
-		"F-0":-1.323,
-    "F-1":-1.344,
-    "F-2":-1.355,
-    "F-3":-1.356,
-    "F-4":-1.366,
-    "F-5":-1.367,
-    "F-6":-1.372,
-    "F-7":-1.375,
-    "F-8":-1.378,
-    "F-9":-1.382,
+    "F-0": -1.323,
+    "F-1": -1.344,
+    "F-2": -1.355,
+    "F-3": -1.356,
+    "F-4": -1.366,
+    "F-5": -1.367,
+    "F-6": -1.372,
+    "F-7": -1.375,
+    "F-8": -1.378,
+    "F-9": -1.382,
 
-		"G-0":3.377,
-    "G-1":3.554,
-    "G-2":3.492,
-    "G-3":3.477,
-    "G-4":3.482,
-    "G-5":3.424,
-    "G-6":3.433,
-    "G-7":3.440,
-    "G-8":3.501,
-    "G-9":3.443,
+    "G-0": 3.377,
+    "G-1": 3.554,
+    "G-2": 3.492,
+    "G-3": 3.477,
+    "G-4": 3.482,
+    "G-5": 3.424,
+    "G-6": 3.433,
+    "G-7": 3.44,
+    "G-8": 3.501,
+    "G-9": 3.443,
 
-		"K-0":2.344,
-    "K-1":2.353,
-    "K-2":2.321,
-    "K-3":2.335,
-    "K-4":2.367,
-    "K-5":2.361,
-    "K-6":2.359,
-    "K-7":2.354,
-    "K-8":2.355,
-    "K-9":2.379,
+    "K-0": 2.344,
+    "K-1": 2.353,
+    "K-2": 2.321,
+    "K-3": 2.335,
+    "K-4": 2.367,
+    "K-5": 2.361,
+    "K-6": 2.359,
+    "K-7": 2.354,
+    "K-8": 2.355,
+    "K-9": 2.379,
 
-		"M-0":1.445,
-    "M-1":1.458,
-    "M-2":1.490,
-    "M-3":1.433,
-    "M-4":1.455,
-    "M-5":1.467,
-    "M-6":1.421,
-    "M-7":1.499,
-    "M-8":1.356,
-    "M-9":1.332
+    "M-0": 1.445,
+    "M-1": 1.458,
+    "M-2": 1.49,
+    "M-3": 1.433,
+    "M-4": 1.455,
+    "M-5": 1.467,
+    "M-6": 1.421,
+    "M-7": 1.499,
+    "M-8": 1.356,
+    "M-9": 1.332
   },
-	"governments": [
-    "Terran Republic"
-  ],
+  "governments": ["Terran Republic"],
   "stars-genned": 0,
 
   "names": {
     "star-surveys": ["2MASS"],
     "meaningless-1": {
       "component1": [
-        "Par","Mul","Ekk","Er","Amarat","Onse","Graucha","Kopola","Semul","Itsche"
+        "Par",
+        "Mul",
+        "Ekk",
+        "Er",
+        "Amarat",
+        "Onse",
+        "Graucha",
+        "Kopola",
+        "Semul",
+        "Itsche"
       ],
       "component2": [
-        "ia","idala","iserk","iteria","imsolia","oldali","oprakia","opreseya","oidala","oilia",
-        "etemeia","useia"
+        "ia",
+        "idala",
+        "iserk",
+        "iteria",
+        "imsolia",
+        "oldali",
+        "oprakia",
+        "opreseya",
+        "oidala",
+        "oilia",
+        "etemeia",
+        "useia"
       ]
     }
   },
