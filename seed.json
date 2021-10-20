@@ -193,5 +193,8 @@
     "Terran Republic"
   ],
   "stars-genned": 0,
-  "config.OUTPUT_FORMAT": "json"
+
+  "config.OUTPUT_FORMAT": "json",
+  "config.STAR_NAMES": "LACOP",
+  "config.PLANET_NAMES": "numeric"
 }
