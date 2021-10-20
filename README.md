@@ -1,7 +1,8 @@
-
+# IMPORTANT
+Install the Typer library before using! [get typer here](https://github.com/tiangolo/typer)
 
 # Introduction
-This is a Python script to generate random star systems. Use it for anything.==
+This is a Python script to generate random star systems. Use it for anything.
 # The Details
 
 The script generates a star with random attributes and selects how many planets to generate (from 4 to 16).
