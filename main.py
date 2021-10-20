@@ -15,6 +15,7 @@ import uuid
 app = typer.Typer()
 
 CONFIG = json.load(open('seed.json'))
+FILE_FORMAT = CONFIG['config.OUTPUT_FORMAT']
 
 PLANET_TYPES = CONFIG['planet-types']
 GOVERNMENTS  = CONFIG['governments']
