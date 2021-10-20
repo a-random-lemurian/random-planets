@@ -6,7 +6,11 @@
     "t1":[
       "Barren",
       "Toxic",
-      "Lava"],
+      "Lava",
+      "Corrosive",
+      "Acidic",
+      "Venusian"
+    ],
     "t2":[
       "Ice",
       "Tundra"
