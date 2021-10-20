@@ -3,11 +3,25 @@
     "Barren","Toxic","Lava","Ice","Tundra","Desert","Earthlike","Ocean","Paradise","Gaian","Aresian","Mega-Earth","Mostland"
   ],
 	"planet-types-2": {
-    "t1":["Barren","Toxic","Lava"],
-    "t2":["Ice","Tundra"],
-    "t3":["Desert"],
-    "t4":["Earthlike","Ocean"],
-    "t5":["Paradise","Gaian"]
+    "t1":[
+      "Barren",
+      "Toxic",
+      "Lava"],
+    "t2":[
+      "Ice",
+      "Tundra"
+    ],
+    "t3":[
+      "Desert"
+    ],
+    "t4":[
+      "Earthlike",
+      "Ocean"
+    ],
+    "t5":[
+      "Paradise",
+      "Gaian"
+    ]
   },
 	"planet-surveys": [""],
   "star-surveys": ["2MASS","STARGEN","SUS"],
