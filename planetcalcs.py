@@ -98,7 +98,7 @@ class Calc():
         return(atmo)
 
     def res_score(hab_score: int, planetType: str):
-        res_modifier = SEED['planet-type-modifiers'][planetType]['resources']
+        res_modifier = SEED['planet-type-modifiers'][planetType]['resource']
         res = hab_score * res_modifier / random.uniform(1.6000, 4.0000)
         return(res)
 
