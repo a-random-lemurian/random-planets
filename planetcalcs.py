@@ -102,7 +102,7 @@ class Calc():
         res = hab_score * res_modifier / random.uniform(1.6000, 4.0000)
         return(res)
     
-    def atmo_tier(atmo_score: int
+    def atmo_tier(atmo_score: int)
         if atmo_score > 1200:
             return('Perfect')
         elif atmo_score > 700:
@@ -113,6 +113,7 @@ class Calc():
             return('Deadly')
         else:
             return('Extremely deadly')
+            
 
 
 
