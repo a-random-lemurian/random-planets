@@ -92,6 +92,7 @@ class Calc():
         Planet_Type_chosen = random.choice(HAB_MODIFIERS['planet-types-2'][tier])
 
         return(Planet_Type_chosen)
+    
 class Name():
     def star():
         region =     ''.join(random.choices(string.digits, k=3))
