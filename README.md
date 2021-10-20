@@ -1,4 +1,5 @@
-
+# IMPORTANT
+Install the Typer library before using! [get typer here](https://github.com/a-random-lemurian/random-planets/edit/master/README.md)
 
 # Introduction
 This is a Python script to generate random star systems. Use it for anything.
