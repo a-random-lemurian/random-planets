@@ -52,7 +52,7 @@ def stars(starstomake: int):
             planet_type = pcal.Calc.choosePlanet(int(habScore))
             planet_name = f'{star_name}.p{pl}'
             
-            dfs += random.randint(65,150)
+            dfs += random.randint(65,150)*(random.uniform(0.00000000,1.40000000))
             
             planet = {'habScore':habScore, 'planetType':planet_type, 'name':planet_name, 'star':star_name}
             planets.append(planet)
