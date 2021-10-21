@@ -55,6 +55,7 @@ def stars(starstomake: int):
             dfs += random.randint(65,150)*(random.uniform(0.00000000,1.40000000))
             atmoScore = pcal.Calc.atmo_score(hab_score=habScore,planetType=planet_type)
             resScore  = pcal.Calc.res_score(hab_score=habScore,planetType=planet_type)
+            radius    = pcal.Calc.radius(hab_score=habScore,planetType=planet_type)
 
             atmoTier = pcal.Calc.atmo_tier(habScore)
             resTier  = pcal.Calc.res_tier(habScore)
@@ -66,7 +67,8 @@ def stars(starstomake: int):
                 'atmoScore':atmoScore,
                 'resScore':resScore,
                 'atmoTier':atmoTier,
-                'resTier':resTier
+                'resTier':resTier,
+                'radius':radius
                     }
             planets.append(planet)
             

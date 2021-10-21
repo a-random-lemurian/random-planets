@@ -96,12 +96,10 @@ class Calc():
         atmo_modifier = SEED['planet-type-modifiers'][planetType]['atmo']
         atmo = hab_score * atmo_modifier / random.uniform(1.2000,1.4000)
         return(atmo)
-
     def res_score(hab_score: int, planetType: str):
         res_modifier = SEED['planet-type-modifiers'][planetType]['resource']
         res = hab_score * res_modifier / random.uniform(1.6000, 4.0000)
         return(res)
-    
     def atmo_tier(atmo_score: int):
         if atmo_score > 1200:
             return('Perfect')
@@ -113,7 +111,6 @@ class Calc():
             return('Deadly')
         else:
             return('Extremely deadly')
-
     def res_tier(res_score: int):
         if res_score > 900:
             return('Extremely mineral-rich')
@@ -123,6 +120,12 @@ class Calc():
             return('Normal')
         else:
             return('Poor')
+    def radius(hab_score: int, planetType: str):
+        size_modifier = SEED['planet-type-modifiers'][planetType]['size-modif']
+        radius = size_modifier * random.uniform(1.3000000000000000000000000000000000000,
+                                                3.4000000000000000000000000000000000000) * random.uniform(1.3000000000000000000000000000000000000,
+                                                                                                          16243.4000000000000000000000000000000000000)
+        return(radius)
 
 
 
