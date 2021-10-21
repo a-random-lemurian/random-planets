@@ -24,7 +24,7 @@
   "planet-type-modifiers": {
     "Barren": {
       "atmo": -1,
-      "resource": 0.34
+      "resource": 0.34,
     },
     "Toxic": {
       "atmo": -2,
