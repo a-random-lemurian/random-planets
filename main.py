@@ -11,6 +11,7 @@ import secrets
 import planetcalcs as pcal
 import os
 import uuid
+import tqdm
 
 app = typer.Typer()
 
@@ -40,7 +41,7 @@ def stars(starstomake: int):
     stars   = []
     planets = []
     
-    for i in range(starstomake):
+    for i in tqdm.tqdm(range(starstomake),desc='generating planets & stars'):
         
         star_name = pcal.Name.star()
         star = pcal.Calc.star_make(star_name)
@@ -71,20 +72,16 @@ def stars(starstomake: int):
                 'radius':radius
                     }
             planets.append(planet)
-            
-    print('Stars generated. Now writing star data to disk.')
-    
     dirname = f'query-{uuid.uuid4()}'
-    
     os.mkdir(f'star-queries/{dirname}')
-    with open(f'star-queries/{dirname}/stars.json','x') as f_stars:
-        json.dump(stars, f_stars)
-        print('Star data written to disk.')
-        
-    with open(f'star-queries/{dirname}/planets.json','x') as f_planets:
-        json.dump(planets, f_planets)
-        print('Planet data written to disk.')
-        
+    for i in tqdm.tqdm(range(1),desc='Writing stars to disk'):
+        with open(f'star-queries/{dirname}/stars.json','x') as f_stars:
+            json.dump(stars, f_stars)
+            print('Star data written to disk.')
+    for i in tqdm.tqdm(range(1),desc='Writing planets to disk'):
+        with open(f'star-queries/{dirname}/planets.json','x') as f_planets:
+            json.dump(planets, f_planets)
+            print('Planet data written to disk.')
     print('DONE')
 
 if __name__ == "__main__":
