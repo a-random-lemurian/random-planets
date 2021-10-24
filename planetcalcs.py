@@ -161,6 +161,9 @@ class Name():
     class Components():
         def numbers(kk:int):
             return(''.join(random.choices(string.digits,k=kk)))
+
+        def lowercase(kk:int):
+            return(''.join(random.choices(string.ascii_lowercase,k=kk)))
     
     class Star():
         def lacos():
@@ -176,6 +179,12 @@ class Name():
             # Not a real star catalog.
             star_num = Name.Components.numbers(16)
             return(f'ECAOAS {star_num}')
+
+        def mesulos():
+            # Not a real star catalog.
+            star_letter = Name.Components.lowercase(4)
+            star_num    = Name.Components.numbers(8)
+            return(f'Mesulos {star_letter}-{star_num}')
 
     class Choose():
         def Choose():
