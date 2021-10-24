@@ -25,7 +25,7 @@ if FILE_FORMAT == 'json':
 elif FILE_FORMAT == 'csv':
     do_nothing = 0
 else:
-    raise Exception(f'File format {FILE_FORMAT} not supported, please use json/csv.')
+    raise FileError(f'File format {FILE_FORMAT} not supported, please use json/csv.')
 
 import csv
 
