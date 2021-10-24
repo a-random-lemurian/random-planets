@@ -158,13 +158,14 @@ class Name():
     # Give a star a random name from the 'LACOS' star survey.
     # LACOS doesn't mean anything.
     # Currently the only available name set.
-    def star():
-        region =     ''.join(random.choices(string.digits, k=3))
-        quadrant_x = ''.join(random.choices(string.digits, k=2))
-        quadrant_y = ''.join(random.choices(string.digits, k=2))
-        quadrant_z = ''.join(random.choices(string.digits, k=2))
-        star_num =   ''.join(random.choices(string.digits, k=5))
-        return(f'LACOS1.r{region}.qx{quadrant_x}-y{quadrant_y}-z{quadrant_z}.s{star_num}')
+    class Star():
+        def lacos():
+            region =     ''.join(random.choices(string.digits, k=3))
+            quadrant_x = ''.join(random.choices(string.digits, k=2))
+            quadrant_y = ''.join(random.choices(string.digits, k=2))
+            quadrant_z = ''.join(random.choices(string.digits, k=2))
+            star_num =   ''.join(random.choices(string.digits, k=5))
+            return(f'LACOS1.r{region}.qx{quadrant_x}-y{quadrant_y}-z{quadrant_z}.s{star_num}')
 
 # for xp in range(250):
 #     p = + 100
