@@ -21,9 +21,6 @@ FILE_FORMAT = CONFIG['config.OUTPUT_FORMAT']
 PLANET_TYPES = CONFIG['planet-types']
 GOVERNMENTS  = CONFIG['governments']
 
-PLANET_SURVEYS = CONFIG['planet-surveys']
-STAR_SURVEYS   = CONFIG['star-surveys']
-
 if FILE_FORMAT == 'json':
     do_nothing = 0
 elif FILE_FORMAT == 'csv':
