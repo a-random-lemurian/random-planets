@@ -194,6 +194,9 @@ class Name():
             elif SEED['config.STAR_NAMES'].lower().strip() == 'ecaoas':
                 return(Name.Star.earth_catag())
 
+            elif SEED['config.STAR_NAMES'].lower().strip() == 'mesulos':
+                return(Name.Star.mesulos())
+
 # for xp in range(250):
 #     p = + 100
 #     print((str(Calc.hab_score(1033, p, 'G-4')))+' /'+(str(p)))
