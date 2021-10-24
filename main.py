@@ -6,8 +6,7 @@ from typing import Optional
 import typer
 import json
 import random
-import rich
-import secrets
+import csv
 import planetcalcs as pcal
 import os
 import uuid
