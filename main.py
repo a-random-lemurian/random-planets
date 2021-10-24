@@ -69,16 +69,21 @@ def stars(starstomake: int):
                 'radius':radius
                     }
             planets.append(planet)
+            
     dirname = f'query-{uuid.uuid4()}'
+    
     os.mkdir(f'star-queries/{dirname}')
+    
     for i in tqdm.tqdm(range(1),desc='Writing stars to disk'):
         with open(f'star-queries/{dirname}/stars.json','x') as f_stars:
             json.dump(stars, f_stars)
             print('Star data written to disk.')
+            
     for i in tqdm.tqdm(range(1),desc='Writing planets to disk'):
         with open(f'star-queries/{dirname}/planets.json','x') as f_planets:
             json.dump(planets, f_planets)
             print('Planet data written to disk.')
+            
     print('DONE')
 
 if __name__ == "__main__":
