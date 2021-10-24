@@ -43,7 +43,7 @@ def stars(starstomake: int):
     
     for i in tqdm.tqdm(range(starstomake),desc='generating planets & stars'):
         
-        star_name = pcal.Name.star()
+        star_name = pcal.Name.Choose.Choose()
         star = pcal.Calc.star_make(star_name)
         stars.append(star)
         
