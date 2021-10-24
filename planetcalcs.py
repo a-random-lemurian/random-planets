@@ -164,16 +164,17 @@ class Name():
     
     class Star():
         def lacos():
-            region =     ''.join(random.choices(string.digits, k=3))
-            quadrant_x = ''.join(random.choices(string.digits, k=2))
-            quadrant_y = ''.join(random.choices(string.digits, k=2))
-            quadrant_z = ''.join(random.choices(string.digits, k=2))
-            star_num =   ''.join(random.choices(string.digits, k=5))
+            # Not a real star catalog.
+            region =     Name.Components.numbers(3)
+            quadrant_x = Name.Components.numbers(2)
+            quadrant_y = Name.Components.numbers(2)
+            quadrant_z = Name.Components.numbers(2)
+            star_num =   Name.Components.numbers(5)
             return(f'LACOS1.r{region}.qx{quadrant_x}-y{quadrant_y}-z{quadrant_z}.s{star_num}')
         
         def earth_catag():
             # Not a real star catalog.
-            star_num = ''.join(random.choices(string.digits, k=16))
+            star_num = Name.Components.numbers(16)
             return(f'ECAOAS {star_num}')
 
     class Choose():
