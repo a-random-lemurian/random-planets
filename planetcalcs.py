@@ -6,6 +6,7 @@ import random
 import json
 import string
 
+# Initial 'seed', used to feed the script data to base it's generation off on.
 SEED = json.load(open('seed.json', 'r'))
 
 debug = False
@@ -21,9 +22,14 @@ class Calc():
         `mass`: Star's mass in solar masses (a star with mass 2SM has twice as much mass than the Sun)
         """
 
+        # Fetch a random spectral type.
         spectral    = random.choice (SEED['star-types'])
+
+        # Then, choose a random temperature and mass for the star.
         temp_kelvin = random.uniform(SEED['star-type-limits'][spectral]['min-temp'],SEED['star-type-limits'][spectral]['max-temp'])
         mass        = random.uniform(SEED['star-type-limits'][spectral]['min-mass'],SEED['star-type-limits'][spectral]['max-mass'])
+
+        
         min_chz     = temp_kelvin * mass / 10 * 2
         max_chz     = min_chz * 4
 
@@ -43,6 +49,7 @@ class Calc():
 
         min_chz = star['min-chz']
         max_chz = star['max-chz']
+        
         # Define the 'goldilocks zone' or circumstellar habitable zone
         # of the star type.
         # CHZ = circumstellar habitable zone (more commonly the goldilocks zone)
@@ -62,22 +69,28 @@ class Calc():
         if distanceFromStar > max_chz:
             # For every 100 ls the planet is too far, add to the modifier.
             modifier -= distanceFromStar - max_chz / 100
+
         # Penalize if planet is too far away.
         # Add positive or punitive modifier based on star type.
+        
         dist_rating = distanceFromStar / modifier
         rand_modifier = random.uniform(0.00000000, 1.50000000)
+
+        # The modifier is made a positive number, if it is negative at the
+        # time of score calculation.
         if modifier > -1:
-            modif = abs(modifier)
+            modif = abs(modifier)                  
             score = dist_rating*modif*rand_modifier
         else:
-            modif = abs(modifier)
+            modif = abs(modifier) # Just in case.
             score = dist_rating/modif*rand_modifier
-        if debug:
+        if debug: # Debug mode, allows to check the 'chz'.
             return(f'{int(score)} / chz: min {min_chz}ls, max {max_chz}ls')
         else:
-            return(int(score))
+            return(int(score)) # Just return the HabScore.
+
     def choosePlanet(habScore: int):
-        # Assign the planet a tier which will determine it's type.
+        """Assign the planet a tier which will determine it's type"""
         if   habScore > 600:
             tier = 't5'
         elif habScore > 520:
@@ -92,14 +105,21 @@ class Calc():
         Planet_Type_chosen = random.choice(SEED['planet-types-2'][tier])
 
         return(Planet_Type_chosen)
+
+# These two functions work quite similarly.
+    
     def atmo_score(hab_score: int, planetType: str):
         atmo_modifier = SEED['planet-type-modifiers'][planetType]['atmo']
         atmo = hab_score * atmo_modifier / random.uniform(1.2000,1.4000)
         return(atmo)
+    
     def res_score(hab_score: int, planetType: str):
         res_modifier = SEED['planet-type-modifiers'][planetType]['resource']
         res = hab_score * res_modifier / random.uniform(1.6000, 4.0000)
         return(res)
+
+# Grants a planet two labels depending on their resource and atmosphere score.
+
     def atmo_tier(atmo_score: int):
         if atmo_score > 1200:
             return('Perfect')
@@ -111,6 +131,7 @@ class Calc():
             return('Deadly')
         else:
             return('Extremely deadly')
+
     def res_tier(res_score: int):
         if res_score > 900:
             return('Extremely mineral-rich')
@@ -120,6 +141,9 @@ class Calc():
             return('Normal')
         else:
             return('Poor')
+
+# Gives the planet a radius in km. For reference, the Earth is roughly 20,000km in diameter.
+
     def radius(hab_score: int, planetType: str):
         size_modifier = SEED['planet-type-modifiers'][planetType]['size-modif']
         radius = size_modifier * random.uniform(1.3000000000000000000000000000000000000,
@@ -129,7 +153,11 @@ class Calc():
 
 
 
+
 class Name():
+    # Give a star a random name from the 'LACOS' star survey.
+    # LACOS doesn't mean anything.
+    # Currently the only available name set.
     def star():
         region =     ''.join(random.choices(string.digits, k=3))
         quadrant_x = ''.join(random.choices(string.digits, k=2))
