@@ -158,6 +158,9 @@ class Name():
     
     # Functions for assigning names to stars.
     # LACOS doesn't mean anything.
+    class Components():
+        def numbers(kk:int):
+            return(''.join(random.choices(string.digits,k=kk)))
     
     class Star():
         def lacos():
