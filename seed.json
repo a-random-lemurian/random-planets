@@ -108,8 +108,7 @@
       "size-modif": 1.17
     }
   },
-  "planet-surveys": [""],
-  "star-surveys": ["2MASS", "STARGEN", "SUS"],
+  
   "star-types": [
     "O-0",
     "O-1",
