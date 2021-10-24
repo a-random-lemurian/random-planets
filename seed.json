@@ -685,5 +685,6 @@
   },
   "config.OUTPUT_FORMAT": "json",
   "config.STAR_NAMES": "LACOP",
-  "config.PLANET_NAMES": "numeric"
+  "config.PLANET_NAMES": "numeric",
+  "config.STAR_NAME_LIST": ["lacop","earth_catag","mesulos"]
 }
