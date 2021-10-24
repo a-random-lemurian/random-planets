@@ -155,10 +155,10 @@ class Calc():
 
 
 class Name():
-    # Give a star a random name from the 'LACOS' star survey.
+    
+    # Functions for assigning names to stars.
     # LACOS doesn't mean anything.
-    # Currently the only available name set.
-
+    
     class Star():
         def lacos():
             region =     ''.join(random.choices(string.digits, k=3))
