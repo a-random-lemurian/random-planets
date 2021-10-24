@@ -166,6 +166,10 @@ class Name():
             quadrant_z = ''.join(random.choices(string.digits, k=2))
             star_num =   ''.join(random.choices(string.digits, k=5))
             return(f'LACOS1.r{region}.qx{quadrant_x}-y{quadrant_y}-z{quadrant_z}.s{star_num}')
+        def earth_catag():
+            # Not a real star catalog.
+            star_num = ''.join(random.choices(string.digits, k=16))
+            return(f'ECAOAS {star_num}')
 
 # for xp in range(250):
 #     p = + 100
