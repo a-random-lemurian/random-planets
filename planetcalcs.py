@@ -199,6 +199,19 @@ class Name():
             star_number = Name.Components.numbers(6)
             return(f'Arrolix {star_letter_1}-{star_letter_2} {star_number}')
 
+        def ed_style_2():
+            # Not a real star catalog. Relies on meaningless_1 for a component of it's star names.
+            component_1 = random.choice(
+                SEED['names']['meaningless-1']['component_1'])
+            component_2 = random.choice(
+                SEED['names']['meaningless-1']['component_2'])
+            comp = f'{component_1}{component_2}'
+            star_letter_1 = Name.Components.lowercase(2)
+            star_letter_2 = Name.Components.lowercase(2)
+            star_number = Name.Components.numbers(6)
+            return(f'{comp} {star_letter_1}-{star-letter_2} {star_number}')
+            
+
     class Choose():
         def Choose():
             if   SEED['config.STAR_NAMES'].lower().strip() == 'lacop':
