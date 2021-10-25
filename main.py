@@ -34,7 +34,9 @@ import csv
 
 @app.command()
 def stars(starstomake: int,
-          format: Optional[str] = typer.Argument(FILE_FORMAT)):
+          format: Optional[str] = typer.Argument(FILE_FORMAT),
+          naming: Optional[str] = typer.Argument(CONFIG['config.STAR_NAMES']),
+          ):
     
     stars   = []
     planets = []
@@ -53,7 +55,7 @@ def stars(starstomake: int,
     
     for i in tqdm.tqdm(range(starstomake),desc='generating planets & stars'):
         
-        star_name = pcal.Name.Choose.Choose()
+        star_name = pcal.Name.Choose.Choose(naming)
         star = pcal.Calc.star_make(star_name)
 
         if format.lower().strip() == 'csv':

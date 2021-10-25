@@ -202,9 +202,9 @@ class Name():
         def ed_style_2():
             # Not a real star catalog. Relies on meaningless_1 for a component of it's star names.
             component_1 = random.choice(
-                SEED['names']['meaningless-1']['component_1'])
+                SEED['names']['meaningless-1']['component1'])
             component_2 = random.choice(
-                SEED['names']['meaningless-1']['component_2'])
+                SEED['names']['meaningless-1']['component2'])
             comp = f'{component_1}{component_2}'
             star_letter_1 = Name.Components.lowercase(2)
             star_letter_2 = Name.Components.lowercase(2)
@@ -213,18 +213,21 @@ class Name():
             
 
     class Choose():
-        def Choose():
-            if   SEED['config.STAR_NAMES'].lower().strip() == 'lacop':
+        def Choose(nameType: str):
+            if   nameType.lower().strip() == 'lacop':
                 return(Name.Star.lacos())
             
-            elif SEED['config.STAR_NAMES'].lower().strip() == 'ecaoas':
+            elif nameType.lower().strip() == 'ecaoas':
                 return(Name.Star.earth_catag())
 
-            elif SEED['config.STAR_NAMES'].lower().strip() == 'mesulos':
+            elif nameType.lower().strip() == 'mesulos':
                 return(Name.Star.mesulos())
 
-            elif SEED['config.STAR_NAMES'].lower().strip() == 'ed-style':
+            elif nameType.lower().strip() == 'ed_style_1':
                 return(Name.Star.ed_style())
+
+            elif nameType.lower().strip() == 'ed_style_2':
+                return(Name.Star.ed_style_2())
 
 # for xp in range(250):
 #     p = + 100
