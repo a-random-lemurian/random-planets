@@ -209,7 +209,7 @@ class Name():
             star_letter_1 = Name.Components.lowercase(2)
             star_letter_2 = Name.Components.lowercase(2)
             star_number = Name.Components.numbers(6)
-            return(f'{comp} {star_letter_1}-{star-letter_2} {star_number}')
+            return(f'{comp} {star_letter_1}-{star_letter_2} {star_number}')
             
 
     class Choose():
