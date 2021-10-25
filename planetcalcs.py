@@ -186,6 +186,12 @@ class Name():
             star_num    = Name.Components.numbers(8)
             return(f'Mesulos {star_letter}-{star_num}')
 
+        def meaningless_1():
+            # Component star names which ed_style_2 can use.
+            component_1 = random.choice(SEED['names']['meaningless-1']['component_1'])
+            component_2 = random.choice(SEED['names']['meaningless-1']['component_2'])
+            return(f'{component_1}{component_2}') 
+
         def ed_style():
             # Not a real star catalog.
             star_letter_1 = Name.Components.lowercase(2)
