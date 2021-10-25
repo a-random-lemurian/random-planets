@@ -91,13 +91,13 @@ class Calc():
 
     def choosePlanet(habScore: int):
         """Assign the planet a tier which will determine it's type"""
-        if   habScore > 600:
+        if   habScore > 640:
             tier = 't5'
-        elif habScore > 520:
+        elif habScore > 550:
             tier = 't4'
-        elif habScore > 300:
+        elif habScore > 500:
             tier = 't3'
-        elif habScore > 100:
+        elif habScore > 70:
             tier = 't2'
         else:
             tier = 't1'
