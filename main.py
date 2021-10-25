@@ -55,6 +55,7 @@ Using it might result in duplicate names. Do you want to use it?
             pass
         else:
             print('Aborted generation.')
+            exit()
 
     if format.lower().strip() == 'csv':
 
