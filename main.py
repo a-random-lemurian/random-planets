@@ -41,6 +41,21 @@ def stars(starstomake: int,
     stars   = []
     planets = []
 
+    if naming.lower().strip() == 'meaningless_1':
+        print(f'''
+HOLD UP, WAIT A MINUTE!
+
+The Meaningless-1 name set does not have that many names.
+Using it might result in duplicate names. Do you want to use it?
+
+[Y]es / [N]o
+              ''')
+        x = input(f'> ')
+        if x.lower().strip() == 'y':
+            pass
+        else:
+            print('Aborted generation.')
+
     if format.lower().strip() == 'csv':
 
         dirname = f'query-{uuid.uuid4()}'
