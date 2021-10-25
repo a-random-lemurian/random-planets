@@ -186,6 +186,13 @@ class Name():
             star_num    = Name.Components.numbers(8)
             return(f'Mesulos {star_letter}-{star_num}')
 
+        def ed_style():
+            # Not a real star catalog.
+            star_letter_1 = Name.Components.lowercase(2)
+            star_letter_2 = Name.Components.lowercase(2)
+            star_number = Name.Components.numbers(6)
+            return(f'Arrolix {star_letter_1}-{star_letter_2} {star_number}')
+
     class Choose():
         def Choose():
             if   SEED['config.STAR_NAMES'].lower().strip() == 'lacop':
@@ -196,6 +203,9 @@ class Name():
 
             elif SEED['config.STAR_NAMES'].lower().strip() == 'mesulos':
                 return(Name.Star.mesulos())
+
+            elif SEED['config.STAR_NAMES'].lower().strip() == 'ed-style':
+                return(Name.Star.ed_style())
 
 # for xp in range(250):
 #     p = + 100
